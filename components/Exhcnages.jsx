@@ -97,8 +97,8 @@ const Exchanges = ({ text }) => {
 
 function Swaps() {
   return (
-    <div>
-      <div className="xchabge_glass p-8 flex flex-col space-y-8">
+    <div className="">
+      <div className="xchabge_glass  p-8 flex flex-col space-y-8">
         <div className="flex items-center flex-start space-x-6">
           <h1 className="text-3xl text-white font-bold"> Swap </h1>
           <span className="text-gray-500 text-2xl ">Info</span>

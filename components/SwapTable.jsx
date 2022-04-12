@@ -19,7 +19,7 @@ function SwapTable() {
     get_currency();
   },[])
   return (
-    <div>
+    <div className="obj">
       <table className="w-full text-sm text-left text-gray-500">
         <thead className="text-xs text-gray-400 text-wider text-base uppercase bg-[#262B38] ">
           <tr>
