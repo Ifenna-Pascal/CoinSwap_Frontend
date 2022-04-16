@@ -15,15 +15,15 @@ function Hero() {
           rounded square Binance Smart Chain, incentivizing community for their
           efforts to the AMM model.
         </span>
-        <div className="flex lg:flex-row  flex-col space-y-6 lg:space-y-0  lg:space-x-8 lg:max-w-[60%] max-w-[90%] mx-auto">
+        <div className="flex lg:flex-row  flex-col space-y-6 lg:space-y-0  lg:space-x-4 lg:max-w-[70%] max-w-[95%] mx-auto">
         <Link href="/Swap" className="">
-            <a className="py-3 bg-[#12FEB7] flex flex-col items-center hover:opacity-100 hover:bg-blend-overlay px-8 rounded-lg text-lg lg:text-xl font-semibold font-Catamaran">
+            <a className="py-3 bg-[#12FEB7]  flex flex-col items-center hover:opacity-100 hover:bg-blend-overlay px-8 rounded-lg text-lg lg:text-xl font-semibold font-Catamaran">
               Buy TRC
             </a>
           </Link>
-          <button className="py-3 bg-[#353547] rounded-lg px-8 ronded-lg text-white font-semibold font-Catamaran w-full text-lg lg:text-xl ">
+          <button className="py-3 bg-[#353547]  rounded-lg px-8 ronded-lg text-white font-semibold font-Catamaran  text-lg lg:text-xl ">
             {" "}
-            What is Tremorcoin
+            What is TRC
           </button>
         </div>
         <span className="text-[#256AC8] font-bold text-xl">What is DeFi</span>

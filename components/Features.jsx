@@ -21,7 +21,7 @@ function Features () {
           img="/img/point.svg"
         />
     </div>
-    <div className='absolute top-0 lg:bottom-10 lg:-left-24 right-0 w-[9rem] lg:w-[11rem]'>
+    <div className='absolute top-0 lg:top-7 lg:bottom-10 lg:-left-24 right-0 w-[9rem] lg:w-[11rem]'>
         <img 
             src="/img/planet.png"
             alt="Logo"
