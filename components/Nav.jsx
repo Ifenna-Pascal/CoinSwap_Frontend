@@ -105,7 +105,7 @@ function Nav({ button = () => {}, isLoggedIn, isLogin, render }) {
             </ul>
           ) : (
             <span className="md:flex hidden items-center font-bold text-white font-Catamaran text-2xl">
-              Swap for Tremorcoin
+              Swap for Tremorcoin 
             </span>
           )}
           {isLogin ? (

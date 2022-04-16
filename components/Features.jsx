@@ -12,7 +12,7 @@ function Features () {
         />
         <Card 
           header="Value" 
-          content="Creating tokens that the community can use in exchange for products and services that are being offered on the CSS Platform." 
+          content="Creating tokens that the community can use in exchange for products and services that are being offered on the TRC Platform." 
           img="/img/map.svg"
         />
         <Card

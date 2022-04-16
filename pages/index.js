@@ -13,13 +13,13 @@ export default function Home() {
       <div className='lg:max-w-[60%] max-w-[95%] mx-auto '>
         <div className='absolute top-0 hidden lg:block bg-deco_bg right-0 w-[17rem] h-full bg-no-repeat'></div>
         <Hero />
-        <div className='lg:w-full w-[98%] mx-auto pb-16'>
+        {/* <div className='lg:w-full w-[98%] mx-auto pb-16'>
         <img 
             src="/img/center.png"
             alt="Logo"
             className='w-full h-full'
         />
-      </div>
+      </div> */}
         <Features />
       </div>
       <Products />

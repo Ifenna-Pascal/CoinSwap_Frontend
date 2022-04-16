@@ -21,7 +21,7 @@ function SwapTable() {
   },[])
 
   return (
-    <div className="obj rounded-2xl overflow-hidden">
+    <div className="obj rounded-2xl overflow-x-auto">
       <table className="w-full text-sm text-left text-gray-500">
         <thead className="text-xs text-gray-400 text-wider uppercase bg-[#262B38] ">
           <tr>

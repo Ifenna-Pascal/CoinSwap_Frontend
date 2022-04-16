@@ -9,7 +9,7 @@ export const Swaps = [
     },
     {
         header: "20 x",
-        content: "CSS Stake Rewards"
+        content: "TRC Stake Rewards"
     },
     {
         header: "30% +",
