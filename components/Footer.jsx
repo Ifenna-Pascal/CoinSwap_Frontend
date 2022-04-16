@@ -7,12 +7,12 @@ function Footer() {
         <div className="lg:max-w-[80%] max-w-[90%] mx-auto grid grid-cols-4">
             <div className='lg:col-span-2 col-span-4 items-start'>
                 <div className='lg:w-[50%] w-[60%] mb-12 -ml-4  lg:mb-0'>
-                    <div className='flex mb-8 items-center'>
+                    <div className='flex mb-8 ml-3 space-x-2 items-center'>
                         <Image 
                             src="/img/logo.png"
                             alt="Logo"
-                            width={60}
-                            height= {60}
+                            width={50}
+                            height= {50}
                         />
                     <span className='font-bold text-white font-Catamaran text-2xl'>Tremorcoin</span>
                     </div>

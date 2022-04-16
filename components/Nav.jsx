@@ -29,24 +29,24 @@ function Nav({ button = () => {}, isLoggedIn, isLogin, render }) {
       } sticky z-50 top-0 w-full ${scrollNav ? "py-4" : "py-8"}`}
     >
       <div className="flex justify-between px-8 items-center">
-        <div>
+        <div className="flex items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            onClick={() => setShow(!show)}
+            className={`h-6 text-gray-300 lg:hidden w-6 ${render ? 'block' : 'hidden'}` }
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M4 6h16M4 12h16M4 18h7"
+            />
+          </svg>
           <Link href="/">
             <a className="flex items-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                onClick={() => setShow(!show)}
-                className="h-6 text-gray-300 lg:hidden w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4 6h16M4 12h16M4 18h7"
-                />
-              </svg>
               <Image
                 src="/img/logo.png"
                 alt="Logo"
@@ -125,38 +125,64 @@ function Nav({ button = () => {}, isLoggedIn, isLogin, render }) {
           )}
         </div>
       </div>
-      <Transition
+      {/* <Transition
         show={show}
         enter="transition ease-in-out duration-300 transform"
-        enterFrom="-translate-x-full"
-        enterTo="translate-x-0"
+        enterFrom="translate-x-full"
+        enterTo="translate-x-full"
         leave="transition ease-in-out duration-300 transform"
         leaveFrom="translate-x-0"
-        leaveTo="-translate-x-full"
-      >
-        <ul className="flex z-20 lg:hidden flex-col px-8 w-[50%] items-start py-8 bg-gray-900  h-screen space-y-12">
-          <li className="text-gray-400 hover:text-[#12FFB8] text-xl tracking-wider font-semibold  font-Catamaran">
-            <Link href="/">
-              <a>Home</a>
-            </Link>
-          </li>
-          <li className="text-gray-400 hover:text-[#12FFB8] text-xl tracking-wider font-semibold  font-Catamaran">
-            <Link href="/">
-              <a>SWAP</a>
-            </Link>
-          </li>
-          <li className="text-gray-400 hover:text-[#12FFB8] text-xl tracking-wider font-semibold  font-Catamaran">
-            <Link href="/">
-              <a>Yeild Farm</a>
-            </Link>
-          </li>
-          <li className="text-gray-400 hover:text-[#12FFB8] text-xl tracking-wider font-semibold  font-Catamaran">
-            <Link href="/">
-              <a>Doc</a>
-            </Link>
-          </li>
-        </ul>
-      </Transition>
+        leaveTo="translate-x-full"
+      > */}
+    {
+        show && (
+            <ul className="lg:flex items-center flex-col mx-8 mt-4 duration-300 space-y-6">
+            <li className="text-gray-400 hover:cursor-pointer hover:text-[#12FFB8] text-xl tracking-wider font-semibold  font-Catamaran">
+              <LinkS
+                activeClass="text-[#12FFB8]"
+                to="about"
+                onClick={() => setShow(false)}
+                smooth={true}
+                duration={500}
+                offset={-84}
+                spy={true}
+                exact="true"
+              >
+                About Us
+              </LinkS>
+            </li>
+            <li className="text-gray-400 hover:cursor-pointer hover:text-[#12FFB8] text-xl tracking-wider font-semibold  font-Catamaran">
+              <LinkS
+                activeClass="text-[#12FFB8]"
+                to="features"
+                onClick={() => setShow(false)}
+                smooth={true}
+                duration={500}
+                offset={-84}
+                spy={true}
+                exact="true"
+              >
+                Features
+              </LinkS>
+            </li>
+            <li className="text-gray-400 hover:cursor-pointer hover:text-[#12FFB8] text-xl tracking-wider font-semibold  font-Catamaran">
+              <LinkS
+                onClick={() => setShow(false)}
+                activeClass="text-[#12FFB8]"
+                to="works"
+                smooth={true}
+                duration={500}
+                offset={-84}
+                spy={true}
+                exact="true"
+              >
+                Our Works
+              </LinkS>
+            </li>
+          </ul>
+        )
+    }
+      {/* </Transition> */}
     </nav>
   );
 }
