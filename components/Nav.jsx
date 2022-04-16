@@ -3,12 +3,14 @@ import Link from 'next/link'
 import React, {useState, useEffect} from 'react';
 import { Transition } from '@headlessui/react';
 import { useRouter } from 'next/router';
+import { load } from '../src/funcs';
+import { ethers } from "ethers";
 
-
-function Nav() {
+function Nav({button = () => {}, isLoggedIn, isLogin}) {
     const router = useRouter();
     const [scrollNav, setScrollNav] = useState(false);
     const [show, setShow] = useState(false);
+
     const changeNav = () => {
         if (window.scrollY >= 80) {
             setScrollNav(true);
@@ -16,9 +18,10 @@ function Nav() {
             setScrollNav(false);
         }
     };
-    useEffect(() => {
-        window.addEventListener('scroll', changeNav);
-    }, []);
+
+    useEffect(() => { window.addEventListener('scroll', changeNav);}, []);
+
+
   return (
     <nav className={`${ scrollNav ? "bg-gray-800 bg-opacity-70" : "bg-transparent" } sticky z-50 top-0 w-full ${ scrollNav ? "py-4" : "py-8" }`}>
         <div className='flex justify-between px-8 items-center'>
@@ -27,12 +30,12 @@ function Nav() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h7" />
                 </svg>
                 <Image 
-                    src="/img/coin_logo.png"
+                    src="/img/logo.png"
                     alt="Logo"
                     width={scrollNav ? 40 : 50 }
                     height= { scrollNav ? 40 : 50}
                 />
-                <span className='hidden lg:flex font-bold text-white font-Catamaran text-2xl'>Coinswap</span>
+                <span className='hidden lg:flex font-bold text-white font-Catamaran text-2xl'>Tremorcoin</span>
            </div>
             <div className='flex space-x-8'>
             <ul className='hidden lg:flex items-center space-x-12'>
@@ -57,9 +60,15 @@ function Nav() {
                     </Link>
                 </li>
             </ul>
-            <button onClick={() => router.push('/dashboard')} className='py-2 flex hover:border-2px hover:border-white px-8 border-[1px] bg-transparent text-white font-bold border-[#58555E] rounded-xl text-lg md:text-xl lg:text-2xl'>
-                    Go to Dapp
+            {isLogin ? (
+                <button onClick={() => button()} className='py-2 flex hover:border-2px hover:border-white px-8 border-[1px] bg-transparent text-white font-semibold border-[#58555E] rounded-xl text-lg md:text-xl lg:text-2xl'>
+                    { isLoggedIn ? 'Disconnect' : 'Connect Wallet' }
                 </button>
+            ):(
+                <button onClick={() => router.push('/Swap')} className='py-2 flex hover:border-2px hover:border-white px-8 border-[1px] bg-transparent text-white font-bold border-[#58555E] rounded-xl text-lg md:text-xl lg:text-2xl'>
+                    Buy Token
+                </button>
+            )}
             </div>
         </div>
         <Transition
