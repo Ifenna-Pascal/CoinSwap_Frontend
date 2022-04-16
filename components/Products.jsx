@@ -4,7 +4,7 @@ import Product from './Product';
 
 function Products() {
   return (
-    <div className='bg-[#16161D] relative'>
+    <div className='bg-[#16161D] relative' id='features'>
       <div className='lg:py-28 pt-20  max-w-[97%] lg:max-w-[60%] mx-auto'>
       <div className='items-center justify-center flex flex-col space-y-6 lg:space-y-10'>
             <h1 className='font-bold text-3xl lg:text-5xl text-white leading-10 tracking-wide font-Catamaran'>Products & Services</h1>
@@ -27,9 +27,9 @@ function Products() {
                 ))
             }
         </div>
-        <div className='flex flex-col items-center py-16 lg:py-0 max-w-[70%] lg:max-w-[30%] mx-auto'>
+        {/* <div className='flex flex-col items-center py-16 lg:py-0 max-w-[70%] lg:max-w-[30%] mx-auto'>
             <button className='text-center w-full px-12 py-4 bg-[#12FFB8] border-none font-semibold text-lg lg:text-2xl text-gray-800 rounded-xl'>go_to_dapp</button>
-        </div>
+        </div> */}
       </div>
     </div>
   )

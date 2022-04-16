@@ -9,12 +9,12 @@ function Footer() {
                 <div className='lg:w-[50%] w-[60%] mb-12 -ml-4  lg:mb-0'>
                     <div className='flex mb-8 items-center'>
                         <Image 
-                            src="/img/coin_logo.png"
+                            src="/img/logo.png"
                             alt="Logo"
                             width={60}
                             height= {60}
                         />
-                    <span className='font-bold text-white font-Catamaran text-2xl'>Coinswap</span>
+                    <span className='font-bold text-white font-Catamaran text-2xl'>Tremorcoin</span>
                     </div>
                     <div className='span px-4'>
                         The CoinSwap Platformhas a suite of products inDecentralized Finance

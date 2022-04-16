@@ -3,7 +3,7 @@ import Card from './Card';
 
 function Features () {
   return (
-    <div className='relative py-16 lg:py-32 z-10'>
+    <div className='relative py-16 lg:py-32 z-10' id='about'>
     <div className='lg:w-full w-[97%] mx-auto grid lg:grid-cols-3 space-y-5 lg:space-y-0 lg:space-x-8'>
         <Card 
           header="Vision" 

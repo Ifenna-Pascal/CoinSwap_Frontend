@@ -11,7 +11,7 @@ const Card = ({header, content}) => (
 
 function Swap() {
   return (
-    <div className='bg-[#16161D]'>
+    <div className='bg-[#16161D]' id='works'>
         <div className='lg:max-w-[80%] mx-auto'>
             <div className='lg:py-16 items-center  justify-center flex flex-col space-y-6 lg:space-y-10'>
                 <h1 className='font-bold text-3xl text-center lg:text-5xl text-white leading-10 tracking-wide font-Catamaran'>CoinSwap Space in numbers</h1>
