@@ -4,10 +4,8 @@ import { Link as LinkS, animateScroll } from "react-scroll";
 import React, { useState, useEffect } from "react";
 import { Transition } from "@headlessui/react";
 import { useRouter } from "next/router";
-import { load } from "../src/funcs";
-import { ethers } from "ethers";
 
-function Nav({ button = () => {}, isLoggedIn, isLogin }) {
+function Nav({ button = () => {}, isLoggedIn, isLogin, render }) {
   const router = useRouter();
   const [scrollNav, setScrollNav] = useState(false);
   const [show, setShow] = useState(false);
@@ -20,10 +18,6 @@ function Nav({ button = () => {}, isLoggedIn, isLogin }) {
     }
   };
 
-  const onClick = () => {
-    animateScroll.scrollToTop();
-  }
-
   useEffect(() => {
     window.addEventListener("scroll", changeNav);
   }, []);
@@ -35,74 +29,85 @@ function Nav({ button = () => {}, isLoggedIn, isLogin }) {
       } sticky z-50 top-0 w-full ${scrollNav ? "py-4" : "py-8"}`}
     >
       <div className="flex justify-between px-8 items-center">
-        <div className="flex items-center">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            onClick={() => setShow(!show)}
-            className="h-6 text-gray-300 lg:hidden w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M4 6h16M4 12h16M4 18h7"
-            />
-          </svg>
-          <Image
-            src="/img/logo.png"
-            alt="Logo"
-            width={scrollNav ? 40 : 50}
-            height={scrollNav ? 40 : 50}
-          />
-          <span className="hidden hover:cursor-pointer lg:flex font-bold text-white font-Catamaran text-2xl" onClick={onClick}>
-            Tremorcoin
-          </span>
+        <div>
+          <Link href="/">
+            <a className="flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                onClick={() => setShow(!show)}
+                className="h-6 text-gray-300 lg:hidden w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 6h16M4 12h16M4 18h7"
+                />
+              </svg>
+              <Image
+                src="/img/logo.png"
+                alt="Logo"
+                width={scrollNav ? 40 : 50}
+                height={scrollNav ? 40 : 50}
+              />
+              <span className="hidden hover:cursor-pointer lg:flex font-bold text-white font-Catamaran text-2xl">
+                Tremorcoin
+              </span>
+            </a>
+          </Link>
         </div>
+
         <div className="flex space-x-8">
-          <ul className="hidden lg:flex items-center space-x-12">
-            <li className="text-gray-400 hover:cursor-pointer hover:text-[#12FFB8] text-xl tracking-wider font-semibold  font-Catamaran">
-            <LinkS
-                activeClass="text-[#12FFB8]"
-                to="about"
-                smooth={true}
-                duration={500}
-                offset={-84}
-                spy={true}
-                exact="true"
-              >
-                About Us
-              </LinkS>
-            </li>
-            <li className="text-gray-400 hover:cursor-pointer hover:text-[#12FFB8] text-xl tracking-wider font-semibold  font-Catamaran">
-            <LinkS
-                activeClass="text-[#12FFB8]"
-                to="features"
-                smooth={true}
-                duration={500}
-                offset={-84}
-                spy={true}
-                exact="true"
-              >
-                Features
-              </LinkS>
-            </li>
-            <li className="text-gray-400 hover:cursor-pointer hover:text-[#12FFB8] text-xl tracking-wider font-semibold  font-Catamaran">
-              <LinkS
-                activeClass="text-[#12FFB8]"
-                to="works"
-                smooth={true}
-                duration={500}
-                offset={-84}
-                spy={true}
-                exact="true"
-              >
-                Our Works
-              </LinkS>
-            </li>
-          </ul>
+          {render ? (
+            <ul className="hidden lg:flex items-center space-x-12">
+              <li className="text-gray-400 hover:cursor-pointer hover:text-[#12FFB8] text-xl tracking-wider font-semibold  font-Catamaran">
+                <LinkS
+                  activeClass="text-[#12FFB8]"
+                  to="about"
+                  smooth={true}
+                  duration={500}
+                  offset={-84}
+                  spy={true}
+                  exact="true"
+                >
+                  About Us
+                </LinkS>
+              </li>
+              <li className="text-gray-400 hover:cursor-pointer hover:text-[#12FFB8] text-xl tracking-wider font-semibold  font-Catamaran">
+                <LinkS
+                  activeClass="text-[#12FFB8]"
+                  to="features"
+                  smooth={true}
+                  duration={500}
+                  offset={-84}
+                  spy={true}
+                  exact="true"
+                >
+                  Features
+                </LinkS>
+              </li>
+              <li className="text-gray-400 hover:cursor-pointer hover:text-[#12FFB8] text-xl tracking-wider font-semibold  font-Catamaran">
+                <LinkS
+                  activeClass="text-[#12FFB8]"
+                  to="works"
+                  smooth={true}
+                  duration={500}
+                  offset={-84}
+                  spy={true}
+                  exact="true"
+                >
+                  Our Works
+                </LinkS>
+              </li>
+            </ul>
+          ) : (
+            <span className="md:flex hidden items-center font-bold text-white font-Catamaran text-2xl">
+              Swap for Tremorcoin
+            </span>
+          )}
           {isLogin ? (
             <button
               onClick={() => button()}

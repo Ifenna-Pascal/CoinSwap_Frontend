@@ -9,7 +9,7 @@ import Swap from '../components/Swap';
 export default function Home() {
   return (
     <div className='bg-[#100C18]'>
-      <Nav />
+      <Nav render />
       <div className='lg:max-w-[60%] max-w-[95%] mx-auto '>
         <div className='absolute top-0 hidden lg:block bg-deco_bg right-0 w-[17rem] h-full bg-no-repeat'></div>
         <Hero />
